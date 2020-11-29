@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
  
 init_state = [1/walkslib.sqrt2, 1j/walkslib.sqrt2]
-step_number = 500;
+step_number = 500
 
 def run(steps):
     # Initialise lists.

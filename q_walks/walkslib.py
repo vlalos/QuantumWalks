@@ -1,4 +1,5 @@
 import math
+import numpy as np
 
 sqrt2 = 1/math.sqrt(2)
 
