@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuantumWalks.Functionality
 {
-    class State
+    public class State
     {
         public double Up { get; set; }
         public double Down { get; set; }
@@ -29,6 +29,11 @@ namespace QuantumWalks.Functionality
 
             this.Up = newUp;
             this.Down = newDown;
+        }
+
+        public static State GetZero()
+        {
+            return new State(0, 0);
         }
     }
 }
