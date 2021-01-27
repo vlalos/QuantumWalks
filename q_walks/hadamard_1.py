@@ -26,9 +26,11 @@ def run(steps):
     shown_prob = walkslib.probabilities(posn_not_null)
     
     # Plot.
-    plt.plot(shown_range, shown_prob)
-    plt.title(init_state)
-    plt.show()
+    #plt.plot(shown_range, shown_prob)
+    #plt.title(init_state)
+    #plt.show()
+    
+    return shown_prob
     
 
 "for i in range(1, 10):    run(i)"
