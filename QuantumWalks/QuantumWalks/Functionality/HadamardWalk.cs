@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace QuantumWalks.Functionality
 {
-    class HadamardWalk
+    public class HadamardWalk
     {
         private readonly State startState;
         public Grid1D Grid { get; set; }
@@ -14,6 +14,7 @@ namespace QuantumWalks.Functionality
         public HadamardWalk(State startState)
         {
             this.startState = startState;
+            this.Grid = new Grid1D(startState);
         }
 
         public HadamardWalk(double up, double down)
@@ -22,9 +23,17 @@ namespace QuantumWalks.Functionality
             this.Grid = new Grid1D(startState);
         }
 
-        public void Step()
+        public void Simulate(int numStep)
         {
-            
+            for (int i = 1; i <= numStep; i++)
+            {
+                this.Grid.Step();
+            }
+        }
+
+        public void Show()
+        {
+
         }
     }
 }

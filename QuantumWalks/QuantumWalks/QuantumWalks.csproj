@@ -52,6 +52,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Functionality\Grid.cs" />
     <Compile Include="Functionality\HadamardWalk.cs" />
     <Compile Include="Functionality\State.cs" />
     <Compile Include="Program.cs" />

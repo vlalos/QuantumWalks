@@ -35,5 +35,6 @@ namespace QuantumWalks.Functionality
         {
             return new State(0, 0);
         }
+
     }
 }
