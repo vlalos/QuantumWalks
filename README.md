@@ -1,4 +1,3 @@
-# quantumstuff
-Some models and research on quantum information
+# Quantum random walks
+Simulation of a quantum random walks on one-dimensional grids
 
-In this repository I will store my scripts with models and basic quantum algorithms
