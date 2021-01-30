@@ -54,7 +54,9 @@
     </Compile>
     <Compile Include="Functionality\Grid.cs" />
     <Compile Include="Functionality\HadamardWalk.cs" />
-    <Compile Include="Functionality\State.cs" />
+    <Compile Include="States\Complex.cs" />
+    <Compile Include="States\Matrix.cs" />
+    <Compile Include="States\State.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
