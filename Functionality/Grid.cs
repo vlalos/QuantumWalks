@@ -14,77 +14,51 @@ namespace QuantumWalks.Functionality
     public class Grid1D 
     {
         public State Start { get; set; }
-        public Grid1D Next { get; set; }
-        public Grid1D Prev { get; set; }
+        public Grid1D Right { get; set; }
+        public Grid1D Left { get; set; }
+        
+        public bool EvenStep { get; set; }
 
-        public Grid1D(State start)
+        #region Constructors
+
+        public Grid1D(State startState)
         {
-            this.Start = start;
+            this.Start = startState;
+            this.Right = null;
+            this.Left = null;
         }
 
-        public Grid1D(State start, Grid1D next)
+        public Grid1D(Complex startUp, Complex startDown)
         {
-            this.Start = start;
-            this.Next = next;
+            this.Start = new State(startUp, startDown);
+            this.Right = null;
+            this.Left = null;
         }
 
-        public Grid1D(State start, Grid1D next, Grid1D prev)
+        public Grid1D(State start, Grid1D right, Grid1D left)
         {
             this.Start = start;
-            this.Next = next;
-            this.Prev = prev;
+            this.Right = right;
+            this.Left = left;
         }
+
+        #endregion
 
         public void Step()
         {
-            // recursive step to the left
-            if (this.Next == null)
+            //recursive to the left
+            if (this.Left == null)
             {
-                this.Next = new Grid1D(State.GetZero());
-            }
-            this.Next.Start.Up += this.Start.Up;
-
-            if (this.Next.Next != null)
-            {
-                this.Next.Next.Step();
+                this.Left = new Grid1D(new State(new Complex(), this.Start.Down)); //Down 
+                this.Start.Down = new Complex();
             }
 
-            // recursive step to the right
-            if (this.Prev == null)
+            //recursive to the right
+            if (this.Right == null)
             {
-                this.Prev = new Grid1D(State.GetZero());
+                this.Right = new Grid1D(new State(this.Start.Up, new Complex())); //Up 
+                this.Start.Up = new Complex();
             }
-            this.Prev.Start.Down += this.Start.Down;
-
-            if (this.Prev.Prev != null)
-            {
-                this.Prev.Prev.Step();
-            }
-
-
-            this.Start = new State(0, 0);
-        }
-
-        public void Coin()
-        {
-            if (this.Next != null)
-            {
-                this.Next.Start.HadamardCoin();
-            }
-
-            this.Start.HadamardCoin();
-
-            if (this.Prev != null)
-            {
-                this.Prev.Start.HadamardCoin();
-            }
-        }
-
-        public List<double> GetGridProbability()
-        {
-            List<double> probabilities = new List<double>();
-
-            return probabilities;
         }
     }
 }
