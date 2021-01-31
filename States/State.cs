@@ -90,6 +90,5 @@ namespace QuantumWalks.States
             this.Up = new Complex(0, 1);
             this.Down = new Complex(1, 0);
         }
-
     }
 }
